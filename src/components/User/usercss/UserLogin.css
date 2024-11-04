@@ -1,0 +1,18 @@
+
+.logins-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.wallpaperscraft.com/image/single/hotel_room_bed_39745_1920x1080.jpg');
+}
+.log-form{
+    width: 300px;
+}
+.log-form input{
+    background: transparent;
+}
+.log-form input::placeholder{
+    color: #c4c4c4;
+}

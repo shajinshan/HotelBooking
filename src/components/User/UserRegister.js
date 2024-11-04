@@ -1,5 +1,6 @@
 import React from 'react'
 import './usercss/UserRegistration.css'
+import { Link } from 'react-router-dom'
 
 function UserRegister() {
   return (
@@ -9,7 +10,7 @@ function UserRegister() {
       <div className="form-container">
       
         <p>
-          Already have an account? <a href="#">Login here!</a>
+          Already have an account? <Link to={'/userlogin'}><a href="#">Login here!</a></Link>
         </p>
         <h3>Create An Account</h3>
         <form className='form'>
