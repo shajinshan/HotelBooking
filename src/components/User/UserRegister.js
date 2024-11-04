@@ -4,10 +4,7 @@ import './usercss/UserRegistration.css'
 function UserRegister() {
   return (
     <div className="signup-container">
-    <div className="left-panel">
-      <h2>“</h2>
-      <h1>Let's Make it Happen Together!</h1>
-    </div>
+  
     <div className="right-panel">
       <div className="form-container">
       
@@ -15,7 +12,7 @@ function UserRegister() {
           Already have an account? <a href="/login">Login here!</a>
         </p>
         <h3>Create An Account</h3>
-        <form>
+        <form className='form'>
           <div className="form-row">
             <input type="text" placeholder="First Name" required />
             <input type="text" placeholder="Last Name" required />
