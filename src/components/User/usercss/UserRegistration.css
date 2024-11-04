@@ -1,0 +1,151 @@
+/* Signup.css */
+.signup-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.wallpaperscraft.com/image/single/hotel_room_bed_39745_1920x1080.jpg');
+  }
+  
+  .left-panel {
+    flex: 1;
+    /* background-image: url('https://images.wallpaperscraft.com/image/single/hotel_room_bed_39745_1920x1080.jpg'); */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .left-panel h2 {
+    font-size: 60px;
+    color: #ffba00;
+    margin: 0;
+  }
+  
+  .left-panel h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .right-panel {
+    flex: 1;
+    /* background-color: #ffba00; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 22px;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 11px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .form-container h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .form-container p {
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .form-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .form-row input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .terms {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 15px;
+  }
+  
+  .terms input {
+    margin-right: 5px;
+  }
+  
+  .terms a {
+    color: #2e3a8b;
+    text-decoration: none;
+  }
+  
+  .terms a:hover {
+    text-decoration: underline;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #04aef7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1d275a;
+  }
+  
+  .social-signup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .social-signup button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+    color: #fff;
+  }
+  
+  .twitter {
+    background-color: #1da1f2;
+    color: #fff;
+  }
+  
+  footer {
+    font-size: 10px;
+    color: #555;
+    margin-top: 20px;
+  }
+  
