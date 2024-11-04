@@ -1,6 +1,5 @@
 import React from 'react'
-import '/Users/shajinshan/Desktop/react/hotel-booking/src/components/User/usercss/UserRegistration.css'
-
+import './usercss/UserRegistration.css'
 
 function UserRegister() {
   return (
