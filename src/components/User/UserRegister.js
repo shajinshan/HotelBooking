@@ -18,7 +18,7 @@ function UserRegister() {
   function onUserRegister(e) {
     e.preventDefault();
 
-    axios.post('http://localhost:8082/userRegister/register', regData)
+    axios.post('http://localhost:8081/userRegister/register', regData)
       .then((res) => {
         alert('registed');
         navigate('/userlogin')
