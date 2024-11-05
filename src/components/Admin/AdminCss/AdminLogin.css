@@ -1,0 +1,106 @@
+/* Basic page setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://img.freepik.com/free-photo/abstract-blur-defocused-hotel-lobby-lounge_74190-6102.jpg?t=st=1730781483~exp=1730785083~hmac=3346e8b729ee2a2db6dbffd35e4cc9c4d2c65e69807425e2ab04097b5570aa0c&w=2000');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .admin-login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+  }
+  
+  .admin-form-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .admin-form-container h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffba00;
+  }
+  
+  /* Input field styling */
+  .admin-form-row {
+    margin-bottom: 15px;
+  }
+  
+  .admin-form-row input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fafafa;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .admin-form-row input:focus {
+    border-color: #ffba00;
+  }
+  
+  .admin-form-row input::placeholder {
+    color: #ddd;
+  }
+  
+  /* Submit button styling */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffba00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1d275a;
+  }
+  
+  /* Footer styling */
+  footer {
+    font-size: 10px;
+    color: #888;
+    margin-top: 15px;
+  }
+  
+  /* Link styling inside the form */
+  .admin-form-container a {
+    color: #c3ad07;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .admin-form-container a:hover {
+    text-decoration: underline;
+  }
+  
