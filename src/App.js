@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
-import HotelRegister from './components/Hotel/HotelRegister';
-import UserRegister from './components/User/UserRegister';
+
 import  { Route, Routes,BrowserRouter } from 'react-router-dom';
 import UserLogin from './components/User/UserLogin';
+import AdminLogin from './components/Admin/AdminLogin';
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
    <div>
     <Routes>
       <Route path='/' element={<UserLogin/>}/>
+      <Route path='/' element={<AdminLogin/>}/>
+
+      
     </Routes>
 
    </div>
