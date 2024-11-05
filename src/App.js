@@ -1,11 +1,6 @@
 
 
 import './App.css';
-
-import  { Route, Routes,BrowserRouter } from 'react-router-dom';
-import UserLogin from './components/User/UserLogin';
-import AdminLogin from './components/Admin/AdminLogin';
-
 import UserRegister from './components/User/UserRegister';
 import  { Route, Routes,BrowserRouter } from 'react-router-dom';
 import UserLogin from './components/User/UserLogin';
