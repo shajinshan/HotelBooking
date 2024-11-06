@@ -51,6 +51,15 @@
 button.form-control{
     margin-top: 20px;
 }
+
+.h-reg-qoute h2{
+    padding: 40px;
+}
+.h-reg-line{
+    height: 600px;
+    width: 3px;
+    background: white;
+}
 /* Responsive styling */
 @media (max-width: 768px) {
     .h-admin-reg-bg {
