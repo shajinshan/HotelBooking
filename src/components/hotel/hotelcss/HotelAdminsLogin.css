@@ -1,0 +1,43 @@
+.h-admin-log-bg{
+    background: url('https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg') center / cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.h-AdminLogin{
+    height: 100px;
+    width: 100px;
+    /* background-color: aqua; */
+}
+.h-AdminLogin img{
+    height: 50px;
+    margin-left: 64px;
+    margin-top: -80px;
+}
+
+.h-ad-login{
+
+    height: 400px;
+    width: 400px;
+    /* background-color: aqua; */
+    padding: 100px;
+    border: 1px solid white;
+    border-radius: 12px;
+   
+}
+.h-ad-login input{
+    margin-bottom: 20px;
+}
+.h-admin-log-tit h2{
+    position: relative;
+    bottom:40px;
+    left: 50px;
+color: #ffffff;
+margin-top: -40px;
+}
+
+  
+ 
+  

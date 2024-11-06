@@ -1,5 +1,5 @@
 .h-admin-reg-bg {
-    
+
     background: url('https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg') center / cover;
     min-height: 100vh;
     display: flex;
@@ -26,6 +26,27 @@
     justify-content: center;
     padding: 40px;
 }
+.authentication {
+    width: 80%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+  }
+  
+  /* Add more space below the username field */
+  .authentication.password {
+    margin-top: 20px; /* Space between username and password */
+  }
+  
+  .form:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
 
 .man-icon {
     display: flex;
