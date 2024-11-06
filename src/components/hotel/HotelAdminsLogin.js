@@ -1,5 +1,5 @@
 import React from 'react'
-// import './hotelcss/HotelAdminsLogin.css'
+//import './hotelcss/HotelAdminsLogin.css'
 
 
 function HotelAdminsLogin() {
