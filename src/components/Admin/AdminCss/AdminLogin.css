@@ -1,21 +1,9 @@
-/* Basic page setup */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://img.freepik.com/free-photo/abstract-blur-defocused-hotel-lobby-lounge_74190-6102.jpg?t=st=1730781483~exp=1730785083~hmac=3346e8b729ee2a2db6dbffd35e4cc9c4d2c65e69807425e2ab04097b5570aa0c&w=2000');
-    background-size: cover;
-    background-position: center;
-  }
-  
+.admin-log-bg {
+  background: url('https://as2.ftcdn.net/v2/jpg/08/15/81/65/1000_F_815816533_MU29lmFkE2Y6R65nGz1W1y5LvjKyluQg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
   .admin-login-container {
     display: flex;
     height: 100vh;
