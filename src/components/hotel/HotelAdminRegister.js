@@ -10,7 +10,7 @@ function HotelAdminRegister() {
         <div className='h-reg-box-main'>
 
 <div className='man-icon'>
-<img src='images/hotellogin.png'></img>
+<img src='images/hotelloginicon.png'></img>
 </div>
 <form>
   <input className='form-control' placeholder='Organiser Name'></input>
