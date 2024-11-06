@@ -21,7 +21,10 @@ function App() {
       <Route path='/userlogin' element={<UserLogin/>}/>
       <Route path='/' element={<UserRegister/>}/>
       <Route path='/hotelregister' element={<HotelRegister/>}/>
-      <Route path='hoteladminregister' element={<HotelAdminRegister/>}/>
+      <Route path='/hoteladminregister' element={<HotelAdminRegister/>}/>
+      <Route path='/hotelladminogin' element={<HotelAdminLogin/>}/>
+
+
 
     </Routes>
 
