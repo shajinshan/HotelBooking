@@ -29,7 +29,7 @@ function userLogin(o){
         <h3>Login to Your Account</h3>
         <form className='log-form' onSubmit={userLogin}>
           <div className="form-row">
-            <input type="email" placeholder="email" name="email" required onChange={valuetaken}/>  {/* Username field */}
+            <input type="email" placeholder="email" name="email" required onChange={valuetaken}/> 
           </div>
           <div className="form-row">
             <input type="password" placeholder="Password" name="password" required onChange={valuetaken} />
