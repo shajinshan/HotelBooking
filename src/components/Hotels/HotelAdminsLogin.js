@@ -1,25 +1,33 @@
-import React from 'react'
-import './hotelscss/HotelAdminsLogin.css'
+import React from 'react';
+import './hotelscss/HotelAdminLogin.css';
+
 
 
 function HotelAdminsLogin() {
   return (
     <div>
-    <div className="login-page">
-  <div className="login-container">
-    <p className="login-text">
-      Don’t have an account? <a href="/signup">Sign up here!</a>
-    </p>
-    <h2>Hotel Login</h2>
-    <form>
-      <input type="text" placeholder="Username" className="input-field" />
-      <input type="password" placeholder="Password" className="input-field" />
-      <button type="submit" className="login-button">Login</button>
-    </form>
+        <div className="hotel-admin-login">
+      <div className="left-side">
+        <p>gqujhqhjs</p>
+      </div>
+      <div className="login1-form">
+        <div className="icon">
+        </div>
+        <form>
+          <input type="text" placeholder="Username" className="input-field" />
+          <input type="password" placeholder="Password" className="input-field" />
+          <div className="options">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+          </div>
+          <button type="submit" className="login-button">LOGIN</button>
+        </form>
+      </div>
+
   </div>
   </div>
   
-  </div>
   )
 }
 

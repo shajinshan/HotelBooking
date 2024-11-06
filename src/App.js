@@ -6,10 +6,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import UserLogin from './components/User/UserLogin';
 import HotelRegister from './components/hotel/HotelRegister';
 import HotelAdminRegister from './components/hotel/HotelAdminRegister';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-
 function App() {
   return (
     <BrowserRouter>
@@ -22,18 +18,6 @@ function App() {
       <Route path='/' element={<UserRegister/>}/>
       <Route path='/hotelregister' element={<HotelRegister/>}/>
       <Route path='/hoteladminregister' element={<HotelAdminRegister/>}/>
-      <Route path='/hotelladminogin' element={<HotelAdminLogin/>}/>
-
-
-
-
-
-          <Route path='/' element={<UserRegister />} />
-          <Route path='/userlogin' element={<UserLogin />} />
-
-          <Route path='/hotelregister' element={<HotelRegister />} />
-          <Route path='/hoteladminregister' element={<HotelAdminRegister />} />
-       
 
         </Routes>
 

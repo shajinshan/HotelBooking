@@ -1,5 +1,5 @@
 import React from 'react'
-import './hotelcss/HotelAdminRegister.css'
+import './hotelcssas/HotelAdminRegister.css'
 function HotelAdminRegister() {
   return (
     <div className='h-admin-reg-bg'>
