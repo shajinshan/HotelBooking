@@ -1,5 +1,5 @@
 .h-admin-reg-bg {
-    /* background: url('https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg') center / cover; */
+    background: url('https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg') center / cover;
     min-height: 100vh;
     display: flex;
     height: 100vh;
@@ -50,6 +50,15 @@
 
 button.form-control{
     margin-top: 20px;
+}
+
+.h-reg-qoute h2{
+    padding: 40px;
+}
+.h-reg-line{
+    height: 600px;
+    width: 3px;
+    background: white;
 }
 /* Responsive styling */
 @media (max-width: 768px) {
