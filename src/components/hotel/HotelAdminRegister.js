@@ -4,7 +4,7 @@ function HotelAdminRegister() {
   return (
     <div className='h-admin-reg-bg'>
         <div className='h-reg-box-left'>
-
+<h2>Heading</h2>
         </div>
 
         <div className='h-reg-box-main'>
