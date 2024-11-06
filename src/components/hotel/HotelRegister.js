@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './hotelcss/HotelRegister.css'
+import './hotelcssas/HotelRegister.css'
 function HotelRegister() {
 
     const [page, setPage] = useState(1);
