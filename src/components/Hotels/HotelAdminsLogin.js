@@ -14,8 +14,8 @@ function HotelAdminsLogin() {
         <div className="icon">
         </div>
         <form>
-          <input type="text" placeholder="Username" className="input-field" />
-          <input type="password" placeholder="Password" className="input-field" />
+          <input type="text" placeholder="Username" className="input1-field" />
+          <input type="password" placeholder="Password" className="input1-field" />
           <div className="options">
             <label>
               <input type="checkbox" /> Remember me

@@ -39,7 +39,7 @@ body {
     
 }
 
-.input-field {
+.input1-field {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -49,7 +49,7 @@ body {
 }
 
 
-.login-button {
+.login1-button {
   width: 100%;
   padding: 12px;
   border: none;
@@ -61,5 +61,5 @@ body {
 }
 
 .login-button:hover {
-    background-color: #a5c6f1;
+    background-color: #f6f7f8;
 }
