@@ -22,6 +22,7 @@ function AdminLogin() {
         </form>
         <footer>&copy; 2024. Company Inc. Ltd.</footer>
       </div>
+      
     </div>
     </div>
   );
