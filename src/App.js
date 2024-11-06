@@ -23,7 +23,7 @@ function App() {
       <Route path='/hoteladminregister' element={<HotelAdminRegister/>}/>
       <Route path='/hotelladminogin' element={<HotelAdminsLogin/>}/>
 
-        </Routes>
+      </Routes>
 
       </div>
     </BrowserRouter>
