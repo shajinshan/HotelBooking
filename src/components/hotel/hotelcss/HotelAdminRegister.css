@@ -1,3 +1,66 @@
-.h-admin-reg-bg{
-    background: url('');
+.h-admin-reg-bg {
+    background: url('https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg') center / cover;
+    min-height: 100vh;
+    display: flex;
+    height: 100vh;
+}
+
+.h-reg-box-left {
+    width: 50%;
+    /* background: rgb(21, 118, 237); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px; /* Optional padding for better spacing */
+}
+
+.h-reg-box-main {
+    width: 50%;
+    /* background: rgb(255, 255, 255); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.man-icon {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.man-icon img {
+    height: 60px;
+    
+    margin-bottom: 80px;
+}
+
+/* Form styling */
+.h-reg-box-main input.form-control {
+   margin-bottom: 20px;
+   width: 300px;
+}
+
+button.form-control{
+    margin-top: 20px;
+}
+/* Responsive styling */
+@media (max-width: 768px) {
+    .h-admin-reg-bg {
+        flex-direction: column;
+    }
+
+    .h-reg-box-left, .h-reg-box-main {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .man-icon {
+        margin-top: 20px;
+        margin-right: 0;
+    }
 }
