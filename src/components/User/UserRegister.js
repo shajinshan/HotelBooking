@@ -62,7 +62,7 @@ function UserRegister() {
                 <a href="/terms">Terms & Conditions</a>.
               </label>
             </div>
-            <button type="submit">Create Account</button>
+            <button type="submit" className='btn btn-warning'>Create Account</button>
 
           </form>
           <footer>&copy; 2024. Company Inc. Ltd.</footer>

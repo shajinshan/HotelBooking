@@ -39,7 +39,7 @@ else{
           <div className="admin-form-row">
             <input type="password" placeholder="Password"  name='adminpassword' onChange={onValueRead} required />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className='btn btn-primary'>Login</button>
         </form>
         <footer>&copy; 2024. Company Inc. Ltd.</footer>
       </div>
