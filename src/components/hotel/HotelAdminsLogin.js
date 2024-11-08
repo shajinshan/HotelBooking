@@ -1,25 +1,25 @@
 import React, { useState } from 'react'; 
 import './hotelcss/HotelAdminsLogin.css';
+import axios from 'axios';
 
 function HotelAdminsLogin() {
-  const [data, setData] = useState({ hoteladminname: '', hoteladminpassword: '' });
+  const [data, setData] = useState({ email: '', password: '' });
 
   function onValueRead(e) {
     setData({ ...data, [e.target.name]: e.target.value });
-    console.log(data);
+   
   }
 
   function onHotelAdminsLogin(e) {
     e.preventDefault();
-    if (data.hoteladminname === "delbin" || data.hoteladminname === "shajin") {
-      if (data.hoteladminpassword === "123") {
-        alert('Login successful');
-      } else {
-        alert('Incorrect password');
-      }
-    } else {
-      alert('Incorrect username');
-    }
+    axios.post('http://localhost:8081/hotelAdmin/login',data)
+    .then((res)=>{
+      alert(res.data.message)
+    })
+    .catch((err)=>{
+     let errMsg=err.response.data.error[0]
+     alert(errMsg)
+    })
   }
 
   return (
@@ -34,8 +34,9 @@ function HotelAdminsLogin() {
         
         <input 
           className='form-control' 
-          placeholder='UserName' 
-          name='hoteladminname'
+          placeholder='email'
+          type='email' 
+          name='email'
           onChange={onValueRead}
           required 
         />
@@ -43,7 +44,7 @@ function HotelAdminsLogin() {
         <input 
           className='form-control' 
           placeholder='Password' 
-          name='hoteladminpassword' 
+          name='password' 
           type='password' 
           onChange={onValueRead} 
           required 
