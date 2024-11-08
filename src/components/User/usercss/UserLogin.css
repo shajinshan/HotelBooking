@@ -14,8 +14,30 @@
     background: transparent;
 }
 .log-form input::placeholder{
-    color: #c4c4c4;
+    color: #ffffff;
 }
 .form-container{
     width: auto;
+}
+.u-forgot-p a{
+   
+   color: gold;
+}
+
+
+.u-forgot-p a:hover{
+    color: rgb(57, 167, 246);
+}
+.form-row input{
+    background: transparent;
+}
+.form-row input::placeholder{
+    color: rgb(153, 153, 153);
+}
+
+.u-reset button{
+    margin-top: 30px;
+}
+.u-password-reset button{
+    margin-top: 30px;
 }
