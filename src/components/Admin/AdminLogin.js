@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import './AdminCss/AdminLogin.css';
+import { useNavigate } from 'react-router-dom';
 
 
 function AdminLogin() {
+
+  const navigate=useNavigate();
 
   const [data,setData]=useState({adminname:'',adminpassword:''});
 
@@ -17,7 +20,7 @@ e.preventDefault();
 
 if(data.adminname === "shajin" || data.adminname === "delbin" ){
   if(data.adminpassword === "123"){
-    alert('Login success');
+    navigate('/admindashboard');
   }
   else{
     alert('incorrect password')
