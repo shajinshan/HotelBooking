@@ -1,0 +1,165 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header .btn-get-app {
+    padding: 8px 20px;
+    background-color: #ffcc80;
+    border-radius: 20px;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+    color: #fff;
+    padding: 100px 60px;
+    text-align: left;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero .search-bar {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .hero .search-bar input,
+  .hero .search-bar select,
+  .hero .search-bar button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .hero .search-bar input,
+  .hero .search-bar select {
+    flex: 1;
+  }
+  
+  .hero .search-bar button {
+    background-color: #ffcc80;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .hero-description {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+  
+  /* Hotels Section */
+  .hotels {
+    padding: 60px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .hotels h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .hotel-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .hotel-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    text-align: left;
+  }
+  
+  .hotel-card img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .hotel-info {
+    padding: 15px;
+  }
+  
+  .hotel-info h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .hotel-info .price {
+    color: #ff5722;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer .footer-section {
+    max-width: 200px;
+  }
+  
+  .footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  

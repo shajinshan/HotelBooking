@@ -17,19 +17,56 @@ function AdminDashBoard() {
       .catch((err) => {
         alert(err)
       })
-  }, []);
+  }, [data]);
 
-  //decline
+  //delete request
+  function deleteRequest(id) {
+    axios.delete(`http://localhost:8081/admin/delete/${id}`)
+      .then((response) => {
 
-  function declineRequest(id){
-    axios.delete(`http://localhost:8081/admin/decline/${id}`)
-    .then((response) => {
-     
-      setData(data.filter((item) => item.id !== id));
-    })
-    .catch((err) => {
-     alert(err)
-    });
+        setData(data.filter((item) => item.id !== id));
+      })
+      .catch((err) => {
+        alert(err)
+      });
+  }
+  const getColorForLetter = (letter) => {
+    const colors = {
+      A: "#FF5733", B: "#33FF57", C: "#3357FF", D: "#FF33A1", E: "#A133FF",
+      F: "#FF8C33", G: "#33FFF7", H: "#FF33B8", I: "#B833FF", J: "#33A1FF",
+      K: "#57FF33", L: "#FF3333", M: "#33FF8C", N: "#8C33FF", O: "#FFA133",
+      P: "#33FFAA", Q: "#5733FF", R: "#FF3357", S: "#33FF57", T: "#3357FF",
+      U: "#FF5733", V: "#33A1FF", W: "#FF8C33", X: "#A1FF33", Y: "#FF33FF",
+      Z: "#FF3357"
+    };
+    return colors[letter.toUpperCase()] || "#333"; // Default color if letter is not mapped
+  };
+
+
+
+
+  //aprove request
+  function approveRequest(id) {
+    axios.post(`http://localhost:8081/admin/approve/${id}`)
+      .then((response) => {
+        
+        alert('approved');
+      })
+      .catch((err) => {
+        alert(err)
+      });
+  }
+
+   //decline request
+   function declineRequest(id) {
+    axios.post(`http://localhost:8081/admin/decline/${id}`)
+      .then((response) => {
+        
+        alert('declined');
+      })
+      .catch((err) => {
+        alert(err)
+      });
   }
   return (
     <div className='a-dashboard'>
@@ -47,6 +84,7 @@ function AdminDashBoard() {
               <th>Address</th>
               <th>Approve</th>
               <th>Decline</th>
+              <th>Status</th>
 
             </tr>
           </thead>
@@ -57,13 +95,23 @@ function AdminDashBoard() {
 
                 <tr>
                   <td>{e.id}</td>
-                  <td>{e.organiserName}</td>
+                  <td className='td-circle-av'>
+                    <div className='circle-avatar' style={{ backgroundColor: getColorForLetter(e.organiserName.charAt(0)) }}>
+
+                      <p>{e.organiserName.charAt(0)}</p>
+                    </div>
+                    <h6> {e.organiserName}</h6></td>
                   <td>{e.email}</td>
                   <td>{e.phone}</td>
                   <td>{e.registerId}</td>
                   <td>{e.address}</td>
-                  <td> <button className='btn btn-success'> Accept</button></td>
-                  <td > <button className='btn btn-danger' onClick={()=> declineRequest(e.id)}> decline</button></td>
+                  <td> <button className='btn btn-success' onClick={() => approveRequest(e.id)}> Accept</button></td>
+                  <td > <button className='btn btn-danger' onClick={() => declineRequest(e.id)}> decline</button></td>
+                  <td><div className='status-div' >
+                    {e.status ? <img src='images/statusapproved.png'></img>
+                      : <img src='images/statuspending.gif'></img>}
+                  </div>
+                  </td>
                 </tr>
 
 

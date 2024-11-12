@@ -8,3 +8,38 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
 }
+.circle-avatar{
+    display: flex;
+    justify-content: center;
+    
+    align-items: normal;
+    height: 30px;
+    width: 30px;
+    
+    border-radius: 50%;
+  
+    
+}
+.circle-avatar p{
+    font-size: 20px;
+    font-weight: 900;
+   
+}
+.td-circle-av{
+    display: flex;
+    height: 55px;
+}
+.td-circle-av h6{
+    margin-top: 3px;
+    margin-left: 10px;
+}
+.status-div{
+    height: 30px;
+    width: 30px;
+    
+    margin-left: 20%;
+}
+.status-div img{
+height: 30px;
+width: 30px;    
+}
