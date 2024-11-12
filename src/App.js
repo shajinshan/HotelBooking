@@ -12,6 +12,7 @@ import HotelAdminsLogin from './components/hotel/HotelAdminsLogin';
 import AdminLogin from './components/Admin/AdminLogin';
 import AdminDashBoard from './components/Admin/AdminDashBoard';
 import PaymentComponent from './components/PaymentComponent';
+import BookingPage from './components/User/BookingPage';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/adminlogin' element={<AdminLogin />} />
           <Route path='/admindashboard' element={<AdminDashBoard />} />
           <Route path='/pay' element={<PaymentComponent/>}/>
+          <Route path='home' element={<BookingPage/>}/>
 
         </Routes>
 
