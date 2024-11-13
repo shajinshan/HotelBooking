@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminCss/AdminDashBoard.css';
-import Navbar from './Navbar';
+
 import axios from 'axios';
 
 function AdminDashBoard() {
@@ -70,10 +70,13 @@ function AdminDashBoard() {
   }
   return (
     <div className='a-dashboard'>
-      <Navbar />
+     
+      <div>
+  
+    </div>
       <div className='a-dash-container container'>
         <h1 className="text-center mb-4">Admin Dashboard</h1>
-        <table className='table  table-hover table-bordered'>
+        <table className='table   table-bordered'>
           <thead className='table-info'>
             <tr>
               <th>Id</th>

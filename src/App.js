@@ -14,6 +14,9 @@ import AdminDashBoard from './components/Admin/AdminDashBoard';
 import PaymentComponent from './components/PaymentComponent';
 import BookingPage from './components/User/BookingPage';
 
+import AdminMenuPage from './components/Admin/AdminMenuPage';
+import AdminMenuHomeComp from './components/Admin/AdminMenuHomeComp';
+
 
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
 
 
           <Route path='/userlogin' element={<UserLogin />} />
-          <Route path='/' element={<UserRegister />} />
+          <Route path='/userregister' element={<UserRegister />} />
           <Route path='/hotelregister' element={<HotelRegister />} />
           <Route path='/hoteladminregister' element={<HotelAdminRegister />} />
           <Route path='/hotelladminogin' element={<HotelAdminsLogin />} />
@@ -34,6 +37,8 @@ function App() {
           <Route path='/admindashboard' element={<AdminDashBoard />} />
           <Route path='/pay' element={<PaymentComponent/>}/>
           <Route path='home' element={<BookingPage/>}/>
+          <Route path='/menupage' element={<AdminMenuPage/>}/>
+          <Route path='/homeAdmi' element={<AdminMenuHomeComp/>}/>
 
         </Routes>
 
