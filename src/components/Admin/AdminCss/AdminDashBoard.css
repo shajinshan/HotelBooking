@@ -1,14 +1,15 @@
 
 .a-dashboard {
-    background-color: #1a1a2e; 
+  
     min-height: 100vh;
     color: #f0f0f0;
     padding: 20px;
+    margin-top: 50px;
 }
 
 /* Container styling */
 .a-dash-container {
-    max-width: 1000px;
+ 
     margin: 0 auto;
     padding: 20px;
     background-color: #22243b; /* Slightly lighter than main background */

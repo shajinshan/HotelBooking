@@ -30,7 +30,9 @@ function AdminMenuPage() {
                 <img src='images/search.png'></img>
              </div>
              <div className='a-menu-dashboard'>
-                {btnstate === 2 ?  <AdminDashBoard/> : <AdminMenuHomeComp/>}
+                {btnstate === 2 ?  <AdminDashBoard/> :<div>
+                    <center> <h3>Nothing</h3></center>
+                    </div>}
        
         </div>
         </div>
