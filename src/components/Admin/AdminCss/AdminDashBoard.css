@@ -1,45 +1,113 @@
-.a-dashboard{
-    background: url('https://images.unsplash.com/photo-1551503766-ac63dfa6401c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-    height: 100vh;
-    background-size: cover;
-    backdrop-filter: blur(5px);
-    position: relative;
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
+
+.a-dashboard {
+    background-color: #1a1a2e; 
+    min-height: 100vh;
+    color: #f0f0f0;
+    padding: 20px;
 }
-.circle-avatar{
-    display: flex;
-    justify-content: center;
-    
-    align-items: normal;
-    height: 30px;
-    width: 30px;
-    
+
+/* Container styling */
+.a-dash-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #22243b; /* Slightly lighter than main background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table header */
+.table thead {
+    background-color: #000000; /* Dark header background */
+    color: #79cdf8; /* Highlighted text color */
+}
+
+.table thead th {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+}
+
+/* Table body */
+.table tbody {
+    background-color: #2a2e42;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+    background-color: #3a3f58; /* Highlight row on hover */
+}
+
+.table td {
+    padding-top: 20px;
+    /* padding: 10px; */
+    text-align: center;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #000000; /* Subtle border for rows */
+}
+
+/* Circle avatar for organizer name */
+.circle-avatar {
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-  
-    
-}
-.circle-avatar p{
-    font-size: 20px;
-    font-weight: 900;
-   
-}
-.td-circle-av{
     display: flex;
-    height: 55px;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 3px;
+    margin-right: 10px;
+    padding-top: 8px;
+    margin-top: -4px;
+}
+
+/* Buttons styling */
+.btn-success, .btn-danger {
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* Status icon */
+.status-div img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Delete icon styling */
+.status-div img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 .td-circle-av h6{
-    margin-top: 3px;
-    margin-left: 10px;
-}
-.status-div{
-    height: 30px;
-    width: 30px;
-    
-    margin-left: 20%;
-}
-.status-div img{
-height: 30px;
-width: 30px;    
+    margin-top: -28px;
+    /* margin-left: 10px; */
 }

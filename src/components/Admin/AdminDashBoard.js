@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminCss/AdminDashBoard.css';
-import Navbar from './Navbar';
+
 import axios from 'axios';
 
 function AdminDashBoard() {
@@ -32,7 +32,7 @@ function AdminDashBoard() {
   }
   const getColorForLetter = (letter) => {
     const colors = {
-      A: "#FF5733", B: "#33FF57", C: "#3357FF", D: "#FF33A1", E: "#A133FF",
+      A: "#FF5733", B: "#33A1FF", C: "#3357FF", D: "#FF33A1", E: "#A133FF",
       F: "#FF8C33", G: "#33FFF7", H: "#FF33B8", I: "#B833FF", J: "#33A1FF",
       K: "#57FF33", L: "#FF3333", M: "#33FF8C", N: "#8C33FF", O: "#FFA133",
       P: "#33FFAA", Q: "#5733FF", R: "#FF3357", S: "#33FF57", T: "#3357FF",
@@ -70,10 +70,13 @@ function AdminDashBoard() {
   }
   return (
     <div className='a-dashboard'>
-      <Navbar />
+     
+      <div>
+  
+    </div>
       <div className='a-dash-container container'>
         <h1 className="text-center mb-4">Admin Dashboard</h1>
-        <table className='table  table-hover table-bordered'>
+        <table className='table   table-bordered'>
           <thead className='table-info'>
             <tr>
               <th>Id</th>
@@ -85,6 +88,7 @@ function AdminDashBoard() {
               <th>Approve</th>
               <th>Decline</th>
               <th>Status</th>
+              <th>Delete</th>
 
             </tr>
           </thead>
@@ -112,6 +116,9 @@ function AdminDashBoard() {
                       : <img src='images/statuspending.gif'></img>}
                   </div>
                   </td>
+                  <td className='status-div' onClick={()=>deleteRequest(e.id)}>
+                     {e.status ?<div><img src='images/trashimg.png'>
+                     </img></div> :<div><img src='images/trash.gif'></img></div> }</td>
                 </tr>
 
 
