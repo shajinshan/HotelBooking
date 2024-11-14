@@ -112,3 +112,7 @@
     margin-top: -28px;
     /* margin-left: 10px; */
 }
+.container h1{
+    font-size: 26px;
+    font-weight: bold;
+}

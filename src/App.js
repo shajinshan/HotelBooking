@@ -36,7 +36,7 @@ function App() {
           <Route path='/adminlogin' element={<AdminLogin />} />
           <Route path='/admindashboard' element={<AdminDashBoard />} />
           <Route path='/pay' element={<PaymentComponent/>}/>
-          <Route path='home' element={<BookingPage/>}/>
+          <Route path='/' element={<BookingPage/>}/>
           <Route path='/menupage' element={<AdminMenuPage/>}/>
           <Route path='/homeAdmi' element={<AdminMenuHomeComp/>}/>
 

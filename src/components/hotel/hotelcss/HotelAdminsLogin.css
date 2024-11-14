@@ -19,13 +19,12 @@
 
 .h-ad-login{
 
-    height: 400px;
+    height: 500px;
     width: 400px;
     /* background-color: aqua; */
     padding: 100px;
     border: 1px solid white;
-    border-radius: 12px;
-   
+    border-radius: 12px;  
 }
 .h-ad-login input{
     margin-bottom: 20px;
@@ -37,7 +36,11 @@
 color: #ffffff;
 margin-top: -40px;
 }
-
-  
- 
-  
+.h-ad-form p{
+    margin-top: 10px;
+    color: #ffffff;
+}
+.h-ad-form a{
+    margin-top: 10px;
+    color: #13f4f4;
+}

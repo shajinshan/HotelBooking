@@ -92,7 +92,7 @@ function UserLogin() {
             }
 
             <p>
-              Don't have an account? <Link to={'/'}><a href="#">Sign up here!</a></Link>
+              Don't have an account? <Link to={'/userregister'}><a href="#">Sign up here!</a></Link>
             </p>
             <footer>&copy; 2024. Company Inc. Ltd.</footer>
           </div>

@@ -20,7 +20,7 @@ e.preventDefault();
 
 if(data.adminname === "shajin" || data.adminname === "delbin" ){
   if(data.adminpassword === "123"){
-    navigate('/admindashboard');
+    navigate('/menupage');
   }
   else{
     alert('incorrect password')

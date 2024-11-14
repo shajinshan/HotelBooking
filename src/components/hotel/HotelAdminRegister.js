@@ -57,7 +57,9 @@ function HotelAdminRegister() {
           <textarea className='form-control'  placeholder='Address' name='address' onChange={onValueRead} required></textarea>
           <button type='submit' className='form-control btn btn-success'>Register</button>
         </form>
-
+<p>
+  If u 
+</p>
       </div>
     </div>
   )
