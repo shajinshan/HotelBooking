@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 import './hotelcss/HotelAdminsLogin.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function HotelAdminsLogin() {
   const [data, setData] = useState({ email: '', password: '' });
@@ -24,7 +25,7 @@ function HotelAdminsLogin() {
 
   return (
     <div className='h-admin-log-bg'>
-      <form className='h-ad-login' onSubmit={onHotelAdminsLogin}>
+      <form className='h-ad-login h-ad-form' onSubmit={onHotelAdminsLogin}>
         <div className='h-AdminLogin'>
           <img src='images/hotelloginicon.png' alt='Hotel login icon' />
         </div>
@@ -51,7 +52,11 @@ function HotelAdminsLogin() {
         />
 
         <button className='btn btn-outline-info form-control' type='submit'>Login</button>
+        <p>
+              Don't have an account? <Link to={'/hoteladminregister'}><a href="#">Sign up here!</a></Link>
+            </p>
       </form>
+     
     </div>
   );
 }

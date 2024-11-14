@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './usercss/BookingPage.css';
+import { Link } from 'react-router-dom';
 
 const BookingPage = () => {
   return (
@@ -12,7 +13,7 @@ const BookingPage = () => {
           <a href="#">List your property</a>
           <a href="#">Support</a>
           <a href="#">Trips</a>
-          <a href="#">Sign in</a>
+        <Link to={'/userlogin'}> <a href="">Sign in</a></Link> 
         </nav>
         <button className="btn-get-app">Get the app</button>
       </header>
@@ -73,6 +74,10 @@ const BookingPage = () => {
         <div className="footer-section">
           <h4>Get exclusive rates</h4>
           <p>We’ve special deals with the world’s leading hotels and we share these savings with you.</p>
+        </div>
+        <div className="footer-section">
+        <Link to={'/adminlogin'}><h4 className='btn btn-primary'>AdminLogin</h4></Link> 
+       <Link to={'/hotelladminogin'}>  <p className='btn btn-danger'>HotelOrganizer Login</p></Link> 
         </div>
       </footer>
     </div>

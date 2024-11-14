@@ -46,9 +46,11 @@ background-color: rgb(0, 0, 0);
 
 }
 .a-menu-dashboard {
+    margin-top: 70px;
+    /* background-color: chartreuse; */
     display: flex;
     flex-direction: column;
-    height: 800px;
+    height: 750px;
     overflow-y: auto; /* enables vertical scrolling if content exceeds height */
     scrollbar-width: thin; /* for Firefox: sets a thin scrollbar */
 }
