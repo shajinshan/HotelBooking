@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './hotelcss/HotelAdminRegister.css'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function HotelAdminRegister() {
 
   const navigate = useNavigate();
@@ -57,8 +57,8 @@ function HotelAdminRegister() {
           <textarea className='form-control'  placeholder='Address' name='address' onChange={onValueRead} required></textarea>
           <button type='submit' className='form-control btn btn-success'>Register</button>
         </form>
-<p>
-  If u 
+<p className='h-dont-reg-p'>
+  If You have an Account ? <Link to={'/hotelladminogin'}> <a href=''>Login</a></Link>
 </p>
       </div>
     </div>

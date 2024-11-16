@@ -1,63 +1,15 @@
-.hotel-main-bg {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background: url('https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg') no-repeat center center;
-    background-size: cover;
+.h-form-back-container{
+    position: relative;
+   top: 100px;
+    margin: auto;
+    height: 400px;
+    width:90%;
+    background-color: rgb(197, 197, 197);
+    border-radius: 20px;
 }
 
-.hotel-reg-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: 90%;
-    max-width: 700px;
-    padding: 40px;
-    background: rgba(246, 71, 2, 0.504);
-    border-radius: 22px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hotel-reg-container .reg-inp {
-    /* height: 100px; */
-    width: 100%;
-    max-width: 500px;
-    margin: 10px 0;
-    padding: 10px;
-    
-    border-radius: 5px;
-   
-    color: #333;
-}
-
-.hotel-reg-container .reg-inp:focus {
-    outline: none;
-    border-color: rgb(255, 255, 255);
-    background-color: rgba(156, 30, 30, 0.2);
-}
-.reg-inp input{
-    width: 90%;
-    height: 40px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-.reg-inp button{
-    display: flex;
-   align-items: center;
-   justify-self: center;
-   justify-content: space-around;
-   margin-top: 24px;
-   height: auto;
-   width: 100px;
-   padding:9px;
-   background: rgb(37, 220, 248);
-   border: 1px solid rgb(115, 114, 113);
-   border-radius: 22px;
-   
+@media (max-width: 768px) {
+    .h-form-back-container{
+        width: 350px;
+    }
 }

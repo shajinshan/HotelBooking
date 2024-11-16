@@ -15,7 +15,7 @@ function AdminDashBoard() {
 
       })
       .catch((err) => {
-        alert(err)
+        // alert(err)
       })
   }, [data]);
 
