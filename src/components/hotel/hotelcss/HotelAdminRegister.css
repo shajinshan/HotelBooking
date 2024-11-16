@@ -99,3 +99,10 @@ button.form-control{
         margin-right: 0;
     }
 }
+.h-dont-reg-p{
+    color: #ffffff;
+    margin-top: 10px;
+}
+.h-dont-reg-p a{
+    color: #36d3f7;
+}
