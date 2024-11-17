@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import './HoteladminCss/HotelAdminMenu.css'
+import ProgressBar from '@ramonak/react-progress-bar';
+import { Doughnut, Line } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto';
 
 function HotelAdminMenu() {
 
@@ -66,16 +69,135 @@ function HotelAdminMenu() {
 
                 <div class="h-ad-men-home-container">
                     <div className='h-ad-menu'>
+                        {/* Home Page Contents */}
                         <div className='h-ad-menu-topbar'>
                             <h1>Hi ! Oraginzer Name</h1>
                             <h2>Track your Business</h2>
                         </div>
 
                         <div className='h-ad-menu-2topbar'>
-                            <div className='h-ad-menu-charts'></div>
-                            <div className='h-ad-menu-charts'></div>
-                            <div className='h-ad-menu-charts'></div>
-                            <div className='h-ad-menu-charts'></div>
+
+                            <div className='h-ad-menu-charts'>
+                                <div className='h-ad-chart-sub-1'>
+                                    <img src='images/booking.png' style={{ backgroundColor: "#a05ae2" }}></img>
+                                    <div className='h-ad-chart-sub'>
+                                        <h4>Total Booking</h4>
+                                        <p>1234</p>
+                                    </div>
+                                </div>
+                                <div className='h-ad-chart-sub-2'>
+
+                                    <ProgressBar className='progressbar'
+                                        completed={70}
+                                        isLabelVisible={false}
+                                        transitionDuration="0.5s"
+                                        bgColor="#a05ae2"
+                                    />
+
+                                </div>
+                            </div>
+
+
+                            <div className='h-ad-menu-charts'>
+                                <div className='h-ad-chart-sub-1'>
+                                    <img src='images/rooms.png' style={{ backgroundColor: "orange" }}></img>
+                                    <div className='h-ad-chart-sub'>
+                                        <h4>Rooms Available</h4>
+                                        <p>1234</p>
+                                    </div>
+                                </div>
+                                <div className='h-ad-chart-sub-2'>
+
+                                    <ProgressBar className='progressbar'
+                                        completed={20}
+                                        isLabelVisible={false}
+                                        transitionDuration="0.5s"
+                                        bgColor="orange"
+                                    />
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div className='h-ad-menu-charts'>
+                                <div className='h-ad-chart-sub-1'>
+                                    <img src='images/hotel/newcustomer.png' style={{ backgroundColor: "#129e00" }}></img>
+                                    <div className='h-ad-chart-sub'>
+                                        <h4>New Customers</h4>
+                                        <p>1234</p>
+                                    </div>
+                                </div>
+                                <div className='h-ad-chart-sub-2'>
+
+                                    <ProgressBar className='progressbar'
+                                        completed={40}
+                                        isLabelVisible={false}
+                                        transitionDuration="0.5s"
+                                        bgColor="#129e00"
+                                    />
+
+                                </div>
+                            </div>
+
+                            <div className='h-ad-menu-charts'>
+                                <div className='h-ad-chart-sub-1'>
+                                    <img src='images/hotel/revenew.png'></img>
+                                    <div className='h-ad-chart-sub'>
+                                        <h4>Total Revenue</h4>
+                                        <p>$ 104</p>
+                                    </div>
+                                </div>
+                                <div className='h-ad-chart-sub-2'>
+
+                                    <ProgressBar className='progressbar'
+                                        completed={90}
+                                        isLabelVisible={false}
+                                        transitionDuration="0.5s"
+                                        bgColor="#3ac7d7"
+                                    />
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='h-ad-menu-3topbar'>
+
+                            <div className='h-ad-menu-graph'>
+
+                                <Line
+                                    data={{
+                                        labels: ["Week-1", "Week-2", "Week-3"], // X-axis labels
+                                        datasets: [
+                                            {
+                                                label: "New Customer",
+                                                data: [23, 3, 4], // Y-axis data
+                                                borderColor: "rgba(75,192,192,1)", // Line color
+                                                backgroundColor: "rgba(75,192,192,0.2)", // Area under the line
+                                                tension: 0.3, // Smooth curves
+
+                                            },
+                                        ],
+                                    }}
+
+
+                                />
+                            </div>
+
+                            <div className='h-ad-menu-flowchart'>
+                                <Doughnut
+                                data={{
+                                    labels:["single","Double","A/c","non-A/c","Deluxe"],
+
+                                    datasets:[{
+                                        label:"Rooms",
+                                        data:[12,23,45,53,77],
+                                    }]
+                                }}
+                                />
+                                 </div>
+
                         </div>
                     </div>
                 </div>
