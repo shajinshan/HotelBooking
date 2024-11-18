@@ -6,20 +6,31 @@ function HotelAdminRegister() {
 
   const navigate = useNavigate();
 
-
+  const [img, setImg] = useState(null);
   const [data, setData] = useState({
     organiserName:'',
     email: '',
     phone: '',
     registerId: '',
     address: '',
-    password:''
+    password:'',
+    profile:img
+
   });
 
   function onValueRead(e) {
     setData({ ...data, [e.target.name]: e.target.value });
+  }
 
-
+  function onImageSet(e){
+    const file=e.target.files[0];
+    setImg(file);
+   
+    if(file.size >50000){
+      alert("too large file");
+      setImg(null);
+  }
+  alert('stored');
   }
 
   function adminRegister(e) {
@@ -48,6 +59,8 @@ function HotelAdminRegister() {
           <img src='images/hotelloginicon.png'></img>
         </div>
         <form onSubmit={adminRegister}>
+          <label className='lable'>Upload Profile Pic</label>
+          <input className='form-control' type='file' required name='profile' onChange={onImageSet} ></input>
           <input className='form-control' type='text' required placeholder='Organiser Name' name='organiserName' onChange={onValueRead}></input>
           <input className='form-control' type='email' placeholder='Email' name='email' onChange={onValueRead} required></input>
           <input className='form-control' type='number' placeholder='Phone' name='phone' onChange={onValueRead} required></input>

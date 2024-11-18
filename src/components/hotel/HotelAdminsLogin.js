@@ -1,9 +1,12 @@
 import React, { useState } from 'react'; 
 import './hotelcss/HotelAdminsLogin.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function HotelAdminsLogin() {
+
+  const navigate = useNavigate();
+
   const [data, setData] = useState({ email: '', password: '' });
 
   function onValueRead(e) {
@@ -15,7 +18,7 @@ function HotelAdminsLogin() {
     e.preventDefault();
     axios.post('http://localhost:8081/hotelAdmin/login',data)
     .then((res)=>{
-      alert(res.data.message)
+      navigate('/hotel')
     })
     .catch((err)=>{
      let errMsg=err.response.data.error[0]
