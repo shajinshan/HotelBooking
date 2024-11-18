@@ -247,3 +247,25 @@ display: flex;
     padding-right: 20px;
 
 }
+
+.h-admin-menu-options li.selected {
+    background-color: #007bff; /* Blue highlight */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .h-ad-menu-4topbar{
+    height: 500px;
+    width: 100%;
+    background-color: #3ac7d7;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .h-admin-menu-options ul.selected {
+    background-color: #007bff; /* Blue highlight */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
