@@ -1,0 +1,111 @@
+/* Main container */
+.h-ad-menu-allbook-container {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+  }
+  
+  /* Navbar */
+  .h-ad-menu-allroom-nav {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #d8e6f4;
+    padding: 0 20px;
+  }
+  
+  .h-ad-menu-allroom-nav h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 20px;
+  }
+  
+  .h-ad-menu-allroom-nav input {
+    height: 40px;
+    width: 350px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-left: 20px;
+  }
+  
+  .h-ad-menu-allroom-nav img {
+    margin-left: auto;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  /* Table container */
+  .h-ad-menu-allroom-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .h-ad-menu-allroom-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .h-ad-menu-allroom-table th,
+  .h-ad-menu-allroom-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #a1a1a1;
+  }
+  
+  .h-ad-menu-allroom-table-tr th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+  }
+  
+  .profile-img-guest img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-email-cont img {
+    height: 16px;
+    margin-right: 8px;
+  }
+  
+  .gender.male {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .gender.female {
+    color: purple;
+    font-weight: bold;
+  }
+  
+  .payment.paid {
+    color: green;
+  }
+  
+  .payment.unpaid {
+    color: red;
+  }
+  
+  /* Actions buttons */
+  .actions .edit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .actions .delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
