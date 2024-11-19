@@ -17,6 +17,7 @@ import AdminMenuPage from './components/Admin/AdminMenuPage';
 import AdminMenuHomeComp from './components/Admin/AdminMenuHomeComp';
 import HotelAdminMenu from './components/hotel/HotelMenu/HotelAdminMenu';
 import HotelAddRooms from './components/hotel/HotelMenu/Rooms/HotelAddRooms';
+import AllBooking from './components/hotel/HotelMenu/Booking/AllBooking';
 
 
 
@@ -38,10 +39,13 @@ function App() {
           <Route path='/hotelregister' element={<HotelRegister />} />
           <Route path='/hoteladminregister' element={<HotelAdminRegister />} />
           <Route path='/hotelladminogin' element={<HotelAdminsLogin />} />
-          <Route path='/hotel' element={<HotelAdminMenu/>}/>
+          <Route path='/hotel/:id' element={<HotelAdminMenu/>}/>
           <Route path='/addroom' element={<HotelAddRooms/>}/>
+          <Route path='/allbooking' element={<AllBooking/>}/>
+
+
           {/* admin */}
-          <Route path='/adminlogin' element={<AdminLogin />} />
+          <Route path='/admin' element={<AdminLogin />} />
           <Route path='/admindashboard' element={<AdminDashBoard />} />
           <Route path='/menupage' element={<AdminMenuPage />} />
           <Route path='/homeAdmi' element={<AdminMenuHomeComp />} />

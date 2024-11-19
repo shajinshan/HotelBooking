@@ -1,9 +1,10 @@
 import React, { useState } from 'react'; 
 import './hotelcss/HotelAdminsLogin.css';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 function HotelAdminsLogin() {
+
 
   const navigate = useNavigate();
 
@@ -18,10 +19,16 @@ function HotelAdminsLogin() {
     e.preventDefault();
     axios.post('http://localhost:8081/hotelAdmin/login',data)
     .then((res)=>{
-      navigate('/hotel')
+      navigate(`/hotel/${res.data.error[0]}`)
     })
     .catch((err)=>{
-     let errMsg=err.response.data.error[0]
+     let errMsg=err.response.data.error[0];
+     console.log(errMsg);
+     
+     if(errMsg ==='I' ){
+      alert('Your Request Not Accepted.. wait until Admin Accept your Request')
+      return;
+     }
      alert(errMsg)
     })
   }
