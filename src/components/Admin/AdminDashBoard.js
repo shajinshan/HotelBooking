@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './AdminCss/AdminDashBoard.css';
+import trashimg from '../../Assets/images/trashimg.png';
+import trashgif from '../../Assets/images/trash.gif';
+import approvedimg from '../../Assets/images/statusapproved.png';
+import waitingimg from '../../Assets/images/statuspending.gif'
 
 import axios from 'axios';
 
@@ -85,6 +89,7 @@ function AdminDashBoard() {
               <th>Phone</th>
               <th>Register Id</th>
               <th>Address</th>
+              <th>Date</th>
               <th>Approve</th>
               <th>Decline</th>
               <th>Status</th>
@@ -109,16 +114,17 @@ function AdminDashBoard() {
                   <td>{e.phone}</td>
                   <td>{e.registerId}</td>
                   <td>{e.address}</td>
+                  <td>{e.localDate}</td>
                   <td> <button className='btn btn-success' onClick={() => approveRequest(e.id)}> Accept</button></td>
                   <td > <button className='btn btn-danger' onClick={() => declineRequest(e.id)}> decline</button></td>
                   <td><div className='status-div' >
-                    {e.status ? <img src='images/statusapproved.png'></img>
-                      : <img src='images/statuspending.gif'></img>}
+                    {e.status ? <img src={approvedimg}></img>
+                      : <img src={waitingimg}></img>}
                   </div>
                   </td>
                   <td className='status-div' onClick={()=>deleteRequest(e.id)}>
-                     {e.status ?<div><img src='images/trashimg.png'>
-                     </img></div> :<div><img src='images/trash.gif'></img></div> }</td>
+                     {e.status ?<div><img src={trashimg}>
+                     </img></div> :<div><img src={trashgif}></img></div> }</td>
                 </tr>
 
 

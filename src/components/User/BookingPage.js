@@ -76,7 +76,7 @@ const BookingPage = () => {
           <p>We’ve special deals with the world’s leading hotels and we share these savings with you.</p>
         </div>
         <div className="footer-section">
-        <Link to={'/adminlogin'}><h4 className='btn btn-primary'>AdminLogin</h4></Link> 
+        <Link to={'/admin'}><h4 className='btn btn-primary'>AdminLogin</h4></Link> 
        <Link to={'/hotelladminogin'}>  <p className='btn btn-danger'>HotelOrganizer Login</p></Link> 
         </div>
       </footer>

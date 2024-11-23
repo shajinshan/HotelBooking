@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import './HoteladminCss/HotelAdminMenu.css'
+import React, { useEffect, useState } from 'react';
+import './HoteladminCss/HotelAdminMenu.css';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
@@ -9,65 +9,67 @@ import AllRooms from './Rooms/AllRooms';
 import AllBooking from './Booking/AllBooking';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import call from '../../../Assets/call.png'
+import call from '../../../Assets/call.png';
 import homeicon from '../../../Assets/images/home.png';
-import bookicon from '../../../Assets/images/booking.png'
-import roomicon from '../../../Assets/images/rooms.png'
-import customericon from '../../../Assets/images/customer.png'
-import revenewicon from '../../../Assets/images/revenew.png'
+import bookicon from '../../../Assets/images/booking.png';
+import roomicon from '../../../Assets/images/rooms.png';
+import customericon from '../../../Assets/images/customer.png';
+import revenewicon from '../../../Assets/images/revenew.png';
+
 function HotelAdminMenu() {
     const { id } = useParams();
-    const [selected, SetSelected] = useState(null);
-    const [page, setPage] = useState('home');
+    const [selected, setSelected] = useState('home');
     const [booking, setBooking] = useState(false);
     const [rooms, setRooms] = useState(false);
     const [customer, setCustomer] = useState(false);
-    const [hotelAdminProfileData,setHotelAdminProfileData]=useState(null);
+    const [hotelAdminProfileData, setHotelAdminProfileData] = useState(null);
 
-
+    // Handle menu selection
     function btnSwitchSelected(menu) {
-        pageNav(menu)
-        SetSelected(menu);
-    }
-    function bookingChange(menu) {
-
-        btnSwitchSelected(menu);
-        setBooking((prevBooking) => !prevBooking);
+        setSelected(menu);
     }
 
-    function roomsChange(menu) {
-        btnSwitchSelected(menu);
-        setRooms((prevRoom) => !prevRoom);
+    // Handle sub-menu toggles for Booking, Rooms, and Customers
+    function toggleBooking() {
+        setBooking(prev => !prev);
+        setSelected('book');
     }
 
-    function customerChange(menu) {
-        btnSwitchSelected(menu);
-        setCustomer((prevCustomer) => !prevCustomer);
-    }
-    //funtion for page change
-
-    function pageNav(pag) {
-        setPage(pag)
+    function toggleRooms() {
+        setRooms(prev => !prev);
+        setSelected('room');
     }
 
-    useEffect(()=>{
+    function toggleCustomer() {
+        setCustomer(prev => !prev);
+        setSelected('customer');
+    }
+
+    // Fetch hotel admin profile data
+    useEffect(() => {
         axios.get(`http://localhost:8081/hoteladmin/viewbyid/${id}`)
+            .then((res) => {
+                setHotelAdminProfileData(res.data);
+            })
+            .catch((err) => {
+                alert(err);
+            });
+    }, [id]);
 
-        .then((res)=>{
-setHotelAdminProfileData(res.data)
+    useEffect(() => {
+        if (hotelAdminProfileData) {
+            console.log("Profile Image Path:", hotelAdminProfileData.profile);
+        }
+    }, [hotelAdminProfileData]);
 
-console.log(hotelAdminProfileData.profile);
-
-
-        })
-        .catch((err)=>{
-            alert(err)
-        })
-    },[id]);
-
-    if (!hotelAdminProfileData) {
-        return <div className='ad-menu-spinner'>Loading...</div>; 
+    if (hotelAdminProfileData === null) {
+        return <div className='ad-menu-spinner'>Loading...</div>;
     }
+
+    const profileImageUrl = hotelAdminProfileData.profile
+        ? `http://localhost:8081${hotelAdminProfileData.profile}`
+        : customericon; // Fallback to a default image
+
     return (
         <div className='h-adminmenu'>
             <div className='h-admin-menu-container'>
@@ -75,207 +77,141 @@ console.log(hotelAdminProfileData.profile);
                     <h2>Hotel.com</h2>
 
                     <div className='h-a-profile'>
-                        <img src={hotelAdminProfileData.profile}></img>
-                        <h1>{hotelAdminProfileData.organiserName} </h1>
+                        {hotelAdminProfileData ? (
+                            hotelAdminProfileData.profile ? (
+                                <img src={`http://localhost:8081${hotelAdminProfileData.profile}`} alt="Admin Profile" />
+                            ) : (
+                                <img src={customericon} alt="Default Profile" />
+                            )
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                        <h1>{hotelAdminProfileData ? hotelAdminProfileData.organiserName : "Loading..."}</h1>
                         <h3>Admin</h3>
                     </div>
 
                     <div className='h-admin-menu-options'>
-
-                        <li className={`h-a-l-img ${selected === "home" ? 'selected' : ''}`} onClick={() => btnSwitchSelected("home")}> <img src={homeicon}></img>Home</li>
-
-                        <li onClick={() => bookingChange('book')} className={`h-a-l-img ${selected === 'book' ? 'selected' : ''}`}> <img src={bookicon}></img>Bookings  </li>
-                        {booking ? <div className='h-ad-li-ul' >
+                        <li className={`h-a-l-img ${selected === "home" ? 'selected' : ''}`} onClick={() => btnSwitchSelected("home")}> <img src={homeicon} alt="Home Icon" />Home</li>
+                        <li className={`h-a-l-img ${selected === 'book' ? 'selected' : ''}`} onClick={toggleBooking}> <img src={bookicon} alt="Bookings Icon" />Bookings</li>
+                        {booking && <div className='h-ad-li-ul'>
                             <ul>New Bookings</ul>
+                        </div>}
 
-                        </div> : <></>}
+                        <li className={`h-a-l-img ${selected === 'room' ? 'selected' : ''}`} onClick={toggleRooms}> <img src={roomicon} alt="Rooms Icon" />Rooms</li>
+                        {rooms && <div className='h-ad-li-ul'>
+                            <ul onClick={() => btnSwitchSelected('addrooms')} className={`${selected === "addrooms" ? 'selected' : ''}`}>Add Rooms</ul>
+                            <ul onClick={() => btnSwitchSelected('updateroom')} className={`${selected === "updateroom" ? 'selected' : ''}`}>Update Rooms</ul>
+                        </div>}
 
-
-                        <li onClick={() => roomsChange('room')} className={`h-a-l-img ${selected === 'room' ? 'selected' : ''}`}> <img src={roomicon}></img>Rooms</li>
-                        {rooms ? <div className='h-ad-li-ul' >
-                            <ul className={`${selected === "addrooms" ? 'selected' : ''}`} onClick={() => btnSwitchSelected('addrooms')}>Add Rooms</ul>
-                            <ul className={`${selected === "updateroom" ? 'selected' : ''}`} onClick={() => btnSwitchSelected('updateroom')}>Update Rooms</ul>
-
-                        </div> : <></>}
-                        <li onClick={() => customerChange('customer')} className={`h-a-l-img ${selected === 'customer' ? 'selected' : ''}`}> <img src={customericon}></img>Customes</li>
-                        {customer ? <div className='h-ad-li-ul' >
+                        <li className={`h-a-l-img ${selected === 'customer' ? 'selected' : ''}`} onClick={toggleCustomer}> <img src={customericon} alt="Customer Icon" />Customers</li>
+                        {customer && <div className='h-ad-li-ul'>
                             <ul>New Customer</ul>
                             <ul>All Customers</ul>
                             <ul>Reviews</ul>
-
-                        </div> : <></>}
-
+                        </div>}
                     </div>
                 </div>
 
                 <div className='h-a-m-navbar'>
-
-                    <button className='btn btn-outline-danger'> Logout</button>
-
+                    <button className='btn btn-outline-danger'>Logout</button>
                 </div>
 
-                <div class="h-ad-men-home-container">
-                    {page === 'home' ?
-                        <div className='h-ad-menu'>
-                            {/* Home Page Contents */}
-                            <div className='h-ad-menu-topbar'>
-                                <h1>Hi ! {hotelAdminProfileData.organiserName} </h1>
-                                <h2>Track your Business</h2>
-                            </div>
-
-                            <div className='h-ad-menu-2topbar'>
-
-                                <div className='h-ad-menu-charts'>
-                                    <div className='h-ad-chart-sub-1'>
-                                        <img src={bookicon} style={{ backgroundColor: "#a05ae2" }}></img>
-                                        <div className='h-ad-chart-sub'>
-                                            <h4>Total Booking</h4>
-                                            <p>1234</p>
-                                        </div>
-                                    </div>
-                                    <div className='h-ad-chart-sub-2'>
-
-                                        <ProgressBar className='progressbar'
-                                            completed={70}
-                                            height='13px'
-                                            isLabelVisible={false}
-                                            transitionDuration="0.5s"
-                                            bgColor="#a05ae2"
-                                        />
-
-                                    </div>
-                                </div>
-
-
-                                <div className='h-ad-menu-charts'>
-                                    <div className='h-ad-chart-sub-1'>
-                                        <img src={roomicon} style={{ backgroundColor: "orange" }}></img>
-                                        <div className='h-ad-chart-sub'>
-                                            <h4>Rooms Available</h4>
-                                            <p>1234</p>
-                                        </div>
-                                    </div>
-                                    <div className='h-ad-chart-sub-2'>
-
-                                        <ProgressBar className='progressbar'
-                                            completed={40}
-                                            height='13px'
-                                            isLabelVisible={false}
-                                            transitionDuration="0.5s"
-                                            bgColor="orange"
-                                        />
-
-                                    </div>
-
-
-
-                                </div>
-
-                                <div className='h-ad-menu-charts'>
-                                    <div className='h-ad-chart-sub-1'>
-                                        <img src={customericon} style={{ backgroundColor: "#129e00" }}></img>
-                                        <div className='h-ad-chart-sub'>
-                                            <h4>New Customers</h4>
-                                            <p>1234</p>
-                                        </div>
-                                    </div>
-                                    <div className='h-ad-chart-sub-2'>
-
-                                        <ProgressBar className='progressbar'
-                                            completed={40}
-                                            height='13px'
-                                            isLabelVisible={false}
-                                            transitionDuration="0.5s"
-                                            bgColor="#129e00"
-                                        />
-
-                                    </div>
-                                </div>
-
-                                <div className='h-ad-menu-charts'>
-                                    <div className='h-ad-chart-sub-1'>
-                                        <img src={revenewicon}></img>
-                                        <div className='h-ad-chart-sub'>
-                                            <h4>Total Revenue</h4>
-                                            <p>$ 104</p>
-                                        </div>
-                                    </div>
-                                    <div className='h-ad-chart-sub-2'>
-
-                                        <ProgressBar className='progressbar'
-                                            completed={90}
-                                            height='13px'
-                                            isLabelVisible={false}
-                                            transitionDuration="0.5s"
-                                            bgColor="#3ac7d7"
-                                        />
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='h-ad-menu-3topbar'>
-
-                                <div className='h-ad-menu-graph'>
-
-                                    <Line
-                                        data={{
-                                            labels: ["Week-1", "Week-2", "Week-3"], // X-axis labels
-                                            datasets: [
-                                                {
-                                                    label: "New Customer",
-                                                    data: [23, 3, 4], // Y-axis data
-                                                    borderColor: "rgba(75,192,192,1)", // Line color
-                                                    backgroundColor: "rgba(75,192,192,0.2)", // Area under the line
-                                                    tension: 0.3, // Smooth curves
-
-                                                },
-                                            ],
-                                        }}
-
-
-                                    />
-                                </div>
-
-                                <div className='h-ad-menu-flowchart'>
-                                    <Doughnut
-                                        data={{
-                                            labels: ["single", "Double", "A/c", "non-A/c", "Deluxe"],
-
-                                            datasets: [{
-                                                label: "Rooms",
-                                                data: [12, 23, 45, 53, 77],
-                                            }]
-                                        }}
-                                    />
-                                </div>
-
-                            </div>
-
-                            <div className='h-ad-menu-4topbar'></div>
-                        </div> :
-                        page === "addrooms" ?
-                            <div className='h-ad-add-rooms'>
-                                <HotelAddRooms />
-                            </div> : page === "updateroom" ?
-                                <div className='h-ad-update-rooms'>
-
-                                    <UpdateRoom />
-                                </div> : page === 'room' ?
-                                    <div>  <AllRooms />  </div> : page === 'book' ?
-                                        <div> <AllBooking /></div> :
-
-
-                                        <div></div>
-                    }
-
-
-
+                <div className="h-ad-men-home-container">
+                    {pageContent()}
                 </div>
             </div>
-
         </div>
-    )
+    );
+
+    function pageContent() {
+        switch (selected) {
+            case 'home':
+                return (
+                    <div className='h-ad-menu'>
+                        <div className='h-ad-menu-topbar'>
+                            <h1>Hi! {hotelAdminProfileData.organiserName}</h1>
+                            <h2>Track your Business</h2>
+                        </div>
+
+                        <div className='h-ad-menu-2topbar'>
+                            <ChartCard icon={bookicon} color="#a05ae2" label="Total Booking" value="1234" progress={70} />
+                            <ChartCard icon={roomicon} color="orange" label="Rooms Available" value="1234" progress={40} />
+                            <ChartCard icon={customericon} color="#129e00" label="New Customers" value="1234" progress={40} />
+                            <ChartCard icon={revenewicon} color="#3ac7d7" label="Total Revenue" value="$104" progress={90} />
+                        </div>
+
+                        <div className='h-ad-menu-3topbar'>
+                            <div className='h-ad-menu-graph'>
+                                <LineChart />
+                            </div>
+
+                            <div className='h-ad-menu-flowchart'>
+                                <DoughnutChart />
+                            </div>
+                        </div>
+                    </div>
+                );
+
+            case 'addrooms':
+                return <HotelAddRooms />;
+            case 'updateroom':
+                return <UpdateRoom />;
+            case 'room':
+                return <AllRooms />;
+            case 'book':
+                return <AllBooking />;
+            default:
+                return null;
+        }
+    }
+
+    function ChartCard({ icon, color, label, value, progress }) {
+        return (
+            <div className='h-ad-menu-charts'>
+                <div className='h-ad-chart-sub-1'>
+                    <img src={icon} style={{ backgroundColor: color }} alt={label} />
+                    <div className='h-ad-chart-sub'>
+                        <h4>{label}</h4>
+                        <p>{value}</p>
+                    </div>
+                </div>
+                <div className='h-ad-chart-sub-2'>
+                    <ProgressBar className='progressbar' completed={22} height='13px' isLabelVisible={false} transitionDuration="0.5s" bgColor={color} />
+                </div>
+            </div>
+        );
+    }
+
+    function LineChart() {
+        return (
+            <Line
+                data={{
+                    labels: ["Week-1", "Week-2", "Week-3"],
+                    datasets: [{
+                        label: "New Customer",
+                        data: [23, 3, 4],
+                        borderColor: "rgba(75,192,192,1)",
+                        backgroundColor: "rgba(75,192,192,0.2)",
+                        tension: 0.3,
+                    }],
+                }}
+            />
+        );
+    }
+
+    function DoughnutChart() {
+        return (
+            <Doughnut
+                data={{
+                    labels: ["Single", "Double", "A/c", "Non-A/c", "Deluxe"],
+                    datasets: [{
+                        label: "Rooms",
+                        data: [12, 23, 45, 53, 77],
+                    }]
+                }}
+            />
+        );
+    }
 }
 
-export default HotelAdminMenu
+export default HotelAdminMenu;
