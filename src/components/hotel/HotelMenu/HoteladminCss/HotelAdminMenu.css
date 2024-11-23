@@ -41,7 +41,7 @@ display: flex;
 }
 
 .h-a-profile img{
-    object-fit: contain;
+    object-fit: cover;
     height: 70px;
     width: 70px;
     padding: 3px;
