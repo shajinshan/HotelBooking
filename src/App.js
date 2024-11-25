@@ -18,6 +18,11 @@ import AdminMenuHomeComp from './components/Admin/AdminMenuHomeComp';
 import HotelAdminMenu from './components/hotel/HotelMenu/HotelAdminMenu';
 import HotelAddRooms from './components/hotel/HotelMenu/Rooms/HotelAddRooms';
 import AllBooking from './components/hotel/HotelMenu/Booking/AllBooking';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import RoomView from './components/hotel/HotelMenu/Rooms/RoomView';
+
+
+
 
 
 
@@ -42,6 +47,7 @@ function App() {
           <Route path='/hotel/:id' element={<HotelAdminMenu/>}/>
           <Route path='/addroom' element={<HotelAddRooms/>}/>
           <Route path='/allbooking' element={<AllBooking/>}/>
+          <Route path='/viewroom' element={<RoomView/>}/>
 
 
           {/* admin */}
