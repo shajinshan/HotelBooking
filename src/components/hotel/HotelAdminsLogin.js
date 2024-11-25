@@ -37,7 +37,7 @@ function HotelAdminsLogin() {
     <div className='h-admin-log-bg'>
       <form className='h-ad-login h-ad-form' onSubmit={onHotelAdminsLogin}>
         <div className='h-AdminLogin'>
-          <img src='images/hotelloginicon.png' alt='Hotel login icon' />
+          <img src='images/hotelloginicon.png' alt='Hotel login icon'/>
         </div>
         <div className='h-admin-log-tit'>
           <h2>Login</h2>
