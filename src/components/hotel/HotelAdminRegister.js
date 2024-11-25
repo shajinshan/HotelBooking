@@ -90,7 +90,7 @@ function HotelAdminRegister() {
           <button type='submit' className='form-control btn btn-success'>Register</button>
         </form>
         <p className='h-dont-reg-p'>
-          If You have an Account? <Link to='/hotelladminogin'>Login</Link>
+          If You have an Account? <Link to='/hotelladminlogin'>Login</Link>
         </p>
       </div>
     </div>
