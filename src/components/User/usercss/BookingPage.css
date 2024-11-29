@@ -1,15 +1,5 @@
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f8f8f8;
-  }
+
+
   
   /* Header */
   .header {
@@ -17,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 60px;
-    background-color: #333;
+    background-color: #0d0c0c;
     color: #fff;
   }
   
@@ -45,7 +35,7 @@
   /* Hero Section */
   .hero {
     position: relative;
-    background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+    background: url('https://i.pinimg.com/736x/43/69/7e/43697e36dcecabb4fa0165af6c35a899.jpg') center/cover no-repeat;
     color: #fff;
     padding: 100px 60px;
     text-align: left;
@@ -162,4 +152,13 @@
     line-height: 1.5;
     color: #ccc;
   }
-  
+  .hotels{
+    display:flex;
+    /* background-color: #ff5722; */
+  }
+  .productlist-container{
+    /* background-color: aqua; */
+    width: 60%;
+    height: 900px;
+    overflow-y:auto ;
+  }

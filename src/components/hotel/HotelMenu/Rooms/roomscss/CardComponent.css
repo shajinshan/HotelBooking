@@ -1,3 +1,25 @@
-img.card-img-top:hover{
-height: 200px;
-}
+/* Apply hover effect to the card image */
+img.card-img-top:hover {
+    opacity: 0.7; /* Reduce opacity on hover */
+    object-fit: cover; /* Ensures the image covers the entire container */
+    transform: translateY(5px); /* Use transform for movement */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for both properties */
+  }
+  
+  /* Base styling for card image */
+  img.card-img-top {
+    object-fit: cover; /* Ensures the image covers the entire container */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+/* Remove underline from anchor tags inside card-text */
+p.card-text a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent element */
+  }
+  
+  /* Optional: Style the card text */
+  p.card-text {
+    color: #752b2b; /* Custom text color */
+    margin: 0; /* Optional: Adjust margin */
+  }
+  

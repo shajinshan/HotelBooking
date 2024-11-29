@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './HoteladminCss/HotelAdminMenu.css';
 import ProgressBar from '@ramonak/react-progress-bar';
 import { Doughnut, Line } from 'react-chartjs-2';
-import { Chart as ChartJS } from 'chart.js/auto';
 import HotelAddRooms from './Rooms/HotelAddRooms';
-import UpdateRoom from './Rooms/UpdateRoom';
 import AllRooms from './Rooms/AllRooms';
 import AllBooking from './Booking/AllBooking';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import call from '../../../Assets/call.png';
 import homeicon from '../../../Assets/images/home.png';
 import bookicon from '../../../Assets/images/booking.png';
 import roomicon from '../../../Assets/images/rooms.png';
@@ -100,7 +97,7 @@ function HotelAdminMenu() {
                         <li className={`h-a-l-img ${selected === 'room' ? 'selected' : ''}`} onClick={toggleRooms}> <img src={roomicon} alt="Rooms Icon" />Rooms</li>
                         {rooms && <div className='h-ad-li-ul'>
                             <ul onClick={() => btnSwitchSelected('addrooms')} className={`${selected === "addrooms" ? 'selected' : ''}`}>Add Rooms</ul>
-                            <ul onClick={() => btnSwitchSelected('updateroom')} className={`${selected === "updateroom" ? 'selected' : ''}`}>Update Rooms</ul>
+                           
                         </div>}
 
                         <li className={`h-a-l-img ${selected === 'customer' ? 'selected' : ''}`} onClick={toggleCustomer}> <img src={customericon} alt="Customer Icon" />Customers</li>
@@ -154,8 +151,6 @@ function HotelAdminMenu() {
 
             case 'addrooms':
                 return <HotelAddRooms />;
-            case 'updateroom':
-                return <UpdateRoom />;
             case 'room':
                 return <AllRooms />;
             case 'book':
