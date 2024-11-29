@@ -2,6 +2,7 @@ import React from 'react';
 
 import './usercss/BookingPage.css';
 import { Link } from 'react-router-dom';
+import ProductList from './ProductList';
 
 const BookingPage = () => {
   return (
@@ -37,9 +38,10 @@ const BookingPage = () => {
         </p>
       </section>
 
-      {/* Hotels Section */}
+  
       <section className="hotels">
-        <h2>Hotels in your area</h2>
+<div>
+{/* <h2>Hotels in your area</h2>
         <div className="hotel-list">
           <div className="hotel-card">
             <img src="https://via.placeholder.com/150" alt="Villa" />
@@ -57,8 +59,14 @@ const BookingPage = () => {
               <p className="price">$920</p>
             </div>
           </div>
-          {/* Add more hotel cards as needed */}
-        </div>
+         Add more hotel cards as needed 
+        </div> */}
+</div>
+<div className='productlist-container'>
+<ProductList/>
+</div>
+       
+        
       </section>
 
       {/* Footer */}
